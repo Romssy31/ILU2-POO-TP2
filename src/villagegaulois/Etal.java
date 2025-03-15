@@ -24,6 +24,9 @@ public class Etal {
 	public String getProduit() {
 		return produit;
 	}
+	public int getquantiteDebutMarche() {
+		return quantiteDebutMarche;
+	}
 
 	public void occuperEtal(Gaulois vendeur, String produit, int quantite) {
 		this.vendeur = vendeur;
@@ -50,12 +53,21 @@ public class Etal {
 		return quantiteAcheter;
 	}
 
+	/**
+	 * 
+	 * @param produit
+	 * @return donneesVente est un tableau de chaine contenant [0] : un boolean
+	 *         indiquant si l'étal est occupé [1] : nom du vendeur [2] : produit
+	 *         vendu [2] : quantité de produit à vendre au début du marché [4] :
+	 *         quantité de produit vendu
+	 */
 	public void libererEtal() {
 		etalOccupe = false;
 	}
 
 	/**
 	 * 
+	 * @param produit
 	 * @return donneesVente est un tableau de chaine contenant [0] : un boolean
 	 *         indiquant si l'étal est occupé [1] : nom du vendeur [2] : produit
 	 *         vendu [2] : quantité de produit à vendre au début du marché [4] :
@@ -71,6 +83,10 @@ public class Etal {
 			donneesVente[4] = String.valueOf(quantiteDebutMarche - quantite);
 		}
 		return donneesVente;
+	}
+	
+	public void diminuerQuantiteProduit(int quantiteDiminution) {
+		quantite-=quantiteDiminution;
 	}
 
 }
